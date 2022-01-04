@@ -2,7 +2,6 @@ package com.huawei.pagingexampleproject.data.repository
 
 import androidx.paging.PagingData
 import com.huawei.pagingexampleproject.data.model.UserModel
-import com.huawei.pagingexampleproject.ui.UserItemUiState
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -10,5 +9,5 @@ import kotlinx.coroutines.flow.Flow
  */
 
 interface UserRepository {
-   fun getUsers(): Flow<PagingData<UserItemUiState>>
+    fun getUsers(): Flow<PagingData<UserModel>>
 }
