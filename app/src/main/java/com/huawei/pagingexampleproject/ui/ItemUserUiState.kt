@@ -1,11 +1,12 @@
 package com.huawei.pagingexampleproject.ui
 
+import com.huawei.pagingexampleproject.common.BaseUiState
 import com.huawei.pagingexampleproject.data.model.UserModel
 
 /**
  * Created by Oguz Sahin on 11/11/2021.
  */
-data class UserItemUiState(private val userModel: UserModel) {
+data class UserItemUiState(private val userModel: UserModel) : BaseUiState() {
 
     fun getImageUrl() = userModel.picture.thumbnail
 

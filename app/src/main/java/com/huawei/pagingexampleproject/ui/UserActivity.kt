@@ -11,6 +11,7 @@ import com.huawei.pagingexampleproject.common.FooterAdapter
 import com.huawei.pagingexampleproject.databinding.ActivityUserBinding
 import com.huawei.pagingexampleproject.util.ext.collect
 import com.huawei.pagingexampleproject.util.ext.collectLast
+import com.huawei.pagingexampleproject.util.ext.executeWithAction
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.map
@@ -51,9 +52,8 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun setUsersUiState(loadState: LoadState) {
-        with(binding) {
+        binding.executeWithAction {
             usersUiState = UsersUiState(loadState)
-            executePendingBindings()
         }
     }
 
