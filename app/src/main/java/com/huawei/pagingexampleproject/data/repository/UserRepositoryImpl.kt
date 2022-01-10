@@ -20,8 +20,15 @@ class UserRepositoryImpl @Inject constructor(
 ) : UserRepository {
     override fun getUsers(): Flow<PagingData<UserModel>> {
         return Pager(
-            config = PagingConfig(pageSize = 10),
+            config = PagingConfig(
+                pageSize = NETWORK_PAGE_SIZE
+            ),
             pagingSourceFactory = { UserPagingDataSource(userService) }
         ).flow
+    }
+
+
+    companion object {
+        const val NETWORK_PAGE_SIZE = 20
     }
 }

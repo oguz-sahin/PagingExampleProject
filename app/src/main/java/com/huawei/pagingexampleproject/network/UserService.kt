@@ -14,4 +14,5 @@ interface UserService {
         @Query("page") page: Int,
         @Query("results") results: Int,
     ): UserResponse
+
 }
